@@ -1,0 +1,440 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #000000;
+    background-image: url('');
+    background-size: cover; /* This makes the image cover the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Progress Bar */
+#progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 5px;
+    width: 0%;
+    background: linear-gradient(90deg, red, orange, yellow, green, blue, purple, cyan, yellow, grey);
+    z-index: 1001;
+    transition: width 0.25s ease;
+}
+
+/* Navbar */
+nav {
+    background-color: #222;
+    padding: 15px 30px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 400;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #f39c12;
+}
+
+/* Section Styling */
+section {
+    height: auto;
+    padding: 80px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+section#home {
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMEqHDw7PmkRjnz6gFG4_uYDrxolecqVq2bw&s') center center/cover no-repeat;
+}
+
+section h1 {
+    font-size: 50px;
+}
+
+section p {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+/* About Us Section */
+#about {
+    position: relative;
+    padding: 100px 20px;
+    background-color: #111111;
+    background-image: url('p7.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay; /* Blend the image with the background color */
+    overflow: hidden; /* Ensures feather doesn't affect outside elements */
+}
+
+/* Add the feather/fade effect */
+#about::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px; /* Adjust the height of the feather effect */
+    background: linear-gradient(to bottom, rgba(17, 17, 17, 1), rgba(17, 17, 17, 0)); /* Top fade */
+    z-index: 1;
+}
+
+#about::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px; /* Adjust the height of the feather effect */
+    background: linear-gradient(to top, rgba(17, 17, 17, 1), rgba(17, 17, 17, 0)); /* Bottom fade */
+    z-index: 1;
+}
+
+#about * {
+    position: relative;
+    z-index: 2;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.card {
+    background-color: #222;
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px orangered;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px greenyellow;
+}
+
+/* Services Section */
+#services {
+    position: relative;
+    padding: 50px 20px;
+    background-color: #222;
+    background-image: url('p6.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay; /* Blend the image with the background color */
+    overflow: hidden; /* Ensures feather doesn't affect outside elements */
+}
+
+/* Add the feather/fade effect */
+#services::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px; /* Adjust the height of the feather effect */
+    background: linear-gradient(to bottom, rgba(34, 34, 34, 1), rgba(34, 34, 34, 0)); /* Top fade */
+    z-index: 1;
+}
+
+#services::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px; /* Adjust the height of the feather effect */
+    background: linear-gradient(to top, rgba(34, 34, 34, 1), rgba(34, 34, 34, 0)); /* Bottom fade */
+    z-index: 1;
+}
+
+#services * {
+    position: relative;
+    z-index: 2;
+}
+
+
+#services h2 {
+    font-size: 36px;
+    color: brown;
+}
+
+.register-btn {
+    display: inline-block;
+    background-color: #007bff;
+    box-shadow: 0 4px 8px rgba(0, 191, 255, 0.3);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 30px;
+}
+
+/* Hover Effect */
+.register-btn:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    transform: translateY(-5px) scale(1.05); /* Move up and slightly increase size */
+    box-shadow: 0 12px 24px rgba(0, 191, 255, 0.5); /* Increase shadow effect */
+}
+
+
+/* Footer */
+footer {
+    background-color: #222;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    color: #aaa;
+    background-color: #222;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.social-media {
+    margin: 0 auto;
+}
+
+.social-media h3 {
+    margin-bottom: 10px;
+}
+
+.social-media ul {
+    list-style: none;
+    padding: 0;
+}
+
+.social-media li {
+    display: inline; /* Aligns items horizontally */
+    margin: 0 15px; /* Adds spacing between items */
+}
+
+.social-media a {
+    color: #f50707ed; /* Change link color */
+    text-decoration: none; /* Remove underline */
+}
+
+.social-media a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+
+/* Responsive Design for Small Screens */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        max-width: 100%;
+    }
+
+    section h1 {
+        font-size: 36px;
+    }
+
+    section p {
+        font-size: 16px;
+    }
+
+    #about h2, #services h2, #contact h2 {
+        font-size: 28px;
+    }
+
+    #about .card, #services .card {
+        margin-bottom: 20px;
+    }
+
+    .register-btn {
+        width: 100%;
+        font-size: 16px;
+        padding: 12px;
+    }
+}
+
+/* Smooth Scroll Effect */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Scroll Fade-in Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease;
+}
+
+.fade-in.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Mobile Typewriter Effect */
+#typewriter {
+    font-size: 32px;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+@media (max-width: 768px) {
+    #typewriter {
+        font-size: 24px;
+    }
+}
+.card ul {
+    list-style-type: disc; /* Use bullet points */
+    padding-left: 20px; /* Add space from the left */
+}
+/* Navbar Styling */
+nav {
+    background-color: #222;
+    padding: 15px 30px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Hamburger Button */
+.burger {
+    display: none; /* Hide by default */
+    flex-direction: column;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Smooth transition for burger button */
+}
+
+.burger.open {
+    transform: rotate(90deg); /* Rotate when menu is open */
+}
+
+.burger .line {
+    width: 30px; /* Increased width for better visibility */
+    height: 4px; /* Increased height for better visibility */
+    background-color: white;
+    margin: 4px 0;
+    transition: all 0.3s ease; /* Smooth transition for lines */
+}
+
+.burger.open .line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg); /* Move and rotate top line */
+}
+
+.burger.open .line:nth-child(2) {
+    opacity: 0; /* Hide middle line */
+}
+
+.burger.open .line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg); /* Move and rotate bottom line */
+}
+
+/* Navigation Links */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Hide links by default */
+        flex-direction: column; /* Stack links vertically */
+        width: 100%;
+        position: absolute;
+        top: 60px; /* Adjust based on your navbar height */
+        left: 0;
+        background-color: #222; /* Match navbar background */
+        z-index: 999;
+        opacity: 0; /* Start with invisible */
+        transform: translateY(-10px); /* Start slightly above */
+        transition: opacity 0.3s ease, transform 0.3s ease; /* Transition for opacity and position */
+    }
+
+    nav ul.active {
+        display: flex; /* Show links when active */
+        opacity: 1; /* Fade in */
+        transform: translateY(0); /* Move to normal position */
+    }
+
+    .burger {
+        display: flex; /* Show burger button in mobile */
+    }
+}
+/* Loading Animation */
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensure it appears above everything else */
+}
+
+#loading img {
+    width: 100px; /* Adjust size as needed */
+    height: auto;
+    animation: spin 5s linear infinite; /* Spin animation */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
